@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/scbackend/.vs
+/scbackend/scbackend/bin/Debug/net7.0
+/scbackend/scbackend/obj
+/kilpailijat.csv
+/SQLQueryries.sql
