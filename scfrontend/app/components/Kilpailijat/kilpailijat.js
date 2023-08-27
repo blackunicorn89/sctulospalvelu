@@ -1,8 +1,28 @@
 "use client"
 import React, { useEffect, useState} from 'react';
+import { useDispatch, useSelector} from "react-redux";
+import {haeKilpailijat} from './kilpailijatSlice';
+
 
 export default function Kilpailijat()
 {
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(haeKilpailijat())
+      }, []); // [dispatch] Voiko laittaa?? 
+
+      const appState = useSelector((state) => state);
+
+      //console.log("mikäo on appstate")  
+      //console.log(appState)
+
+      let kilpailijat = appState.kilpailijat.kilpailijat
+
+      console.log("ilmeisesti ei tule mitään")
+      console.log(kilpailijat);
+
+
 const [kilpailijatLista, setKilpailijatLista] = useState([]);
 
     useEffect(() => {
@@ -20,7 +40,7 @@ const [kilpailijatLista, setKilpailijatLista] = useState([]);
         <div>
          <h1>Kilpailijat</h1>
             <ul>
-                {kilpailijatLista.map (kilpailija =>
+                {kilpailijat.map (kilpailija =>
                     <li key={kilpailija.kilpailijaid}>{kilpailija.etunimi} {kilpailija.sukunimi} {kilpailija.seura}</li>
                     )}
 
