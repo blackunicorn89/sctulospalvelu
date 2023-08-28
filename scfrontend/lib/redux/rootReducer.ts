@@ -1,9 +1,7 @@
 /* Instruments */
-import { counterSlice } from './slices';
-import KilpailijatSlice   from  'app/components/Kilpailijat/kilpailijatSlice'
+import competitorReducer  from  './actions/competittorsActions'
 
 export const reducer = {
-  counter: counterSlice.reducer,
-  kilpailijat: KilpailijatSlice.reducer
+  competitors: competitorReducer
 
 }

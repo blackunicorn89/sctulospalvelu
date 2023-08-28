@@ -1,12 +1,13 @@
 /* Components */
-import { Counter } from './components/Counter/Counter'
-import Kilpailijat from './components/Kilpailijat/kilpailijat'
+import { Routes, Route, Navigate } from "react-router-dom"
+import AddCompetitor from "./kilpailijat/AddCompetitor"
+
+
 
 export default function IndexPage() {
-  return <Kilpailijat />
-
+  <Route path="/kilpailijat/uusikilpailija" element={<AddCompetitor />} />
 }
 
 export const metadata = {
-  title: 'Redux Toolkit',
+  title: 'Sportchambara tulospalvelu',
 }

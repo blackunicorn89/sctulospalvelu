@@ -1,9 +1,4 @@
-/** @type {import('next').NextConfig} */
 const { createProxyMiddleware } = 'http-proxy-middleware';
-const nextConfig = {
-  reactStrictMode: true,
-}
-
 module.exports = {
   async rewrites() {
     return [
@@ -15,4 +10,4 @@ module.exports = {
   },
 };
 
-export default nextConfig
+

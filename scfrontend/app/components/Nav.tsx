@@ -1,8 +1,10 @@
 'use client'
 
+
 /* Core */
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
 
 /* Instruments */
 import styles from '../styles/layout.module.css'
@@ -16,15 +18,15 @@ export const Nav = () => {
         className={`${styles.link} ${pathname === '/' ? styles.active : ''}`}
         href="/"
       >
-        Home
+        Etusivu
       </Link>
       <Link
         className={`${styles.link} ${
-          pathname === '/verify' ? styles.active : ''
+          pathname === '/kilpailijat' ? styles.active : ''
         }`}
-        href="/verify"
+        href="/kilpailijat"
       >
-        Verify
+        Kilpailijat
       </Link>
     </nav>
   )

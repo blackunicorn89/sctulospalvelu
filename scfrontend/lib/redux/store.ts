@@ -9,6 +9,8 @@ import {
 /* Instruments */
 import { reducer } from './rootReducer'
 import { middleware } from './middleware'
+import {scapi} from './slices/scapiSlice/scapiSlice'
+
 
 export const reduxStore = configureStore({
   reducer,
