@@ -3,48 +3,20 @@ import Link from 'next/link'
 import React, { useEffect, useState} from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import { fetchCompetitors } from '@/lib/redux/actions/competittorsActions';
-import { deleteComptetitor } from '@/lib/redux/actions/competittorsActions';
+import { usePathname } from 'next/navigation'
 
 
 export default function Competitors()
 {
 
+    const pathname = usePathname();
     
+    console.log("mikä on tämän sivun pathname")
+    console.log(pathname)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchCompetitors())
       }, []); 
-
-      const[buttonState, setButtonState] = useState({
-        removeIndex:-1,
-        editIndex:-1
-    })
-
-    const changeMode = (mode, index) => {
-        if (mode === "remove") {
-            setButtonState ({
-                removeIndex:index,
-                editIndex:-1
-            })
-        }
-        if (mode === "edit") {
-            setButtonState ({
-                removeIndex:-1,
-                editIndex:index
-            })
-        }
-        if (mode === "cancel") {
-            setButtonState ({
-                removeIndex:-1,
-                editIndex:-1
-            })
-        }
-    }
-      
-    const removeCompetitor = (id) => {
-        dispatch(deleteComptetitor(id))
-        changeMode("cancel")
-    }  
 
       let competitors = useSelector(state => state.competitors.competitors);
 

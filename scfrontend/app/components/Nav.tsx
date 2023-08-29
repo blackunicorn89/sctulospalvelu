@@ -28,6 +28,14 @@ export const Nav = () => {
       >
         Kilpailijat
       </Link>
+      <Link
+        className={`${styles.link} ${
+          pathname === '/kilpailut' ? styles.active : ''
+        }`}
+        href="/kilpailut"
+      >
+        Kilpailut
+      </Link>
     </nav>
   )
 }

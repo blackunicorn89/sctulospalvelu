@@ -1,3 +1,4 @@
+
 /* Components */
 import { Providers } from '@/lib/providers'
 import { Nav } from './components/Nav'
@@ -11,7 +12,9 @@ export default function RootLayout(props: React.PropsWithChildren) {
     <Providers>
       <html lang="en">
         <body>
-          <section className={styles.container}>
+
+          {/*<section className={styles.container}>*/}
+          <section>
             <Nav />
 
             <header className={styles.header}>

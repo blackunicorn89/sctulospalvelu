@@ -12,16 +12,17 @@ export const fetchCompetitors = () => async dispatch => {
 
 export const AddCompetitor = (name) => async dispatch => {
   try {
-    const response = await axios.post('/api/data', { name });
+    const response = await axios.post('/api/kilpailijat', name );
     dispatch({ type: 'ADD_COMPETITOR_SUCCESS', payload: response.data });
+    fetchCompetitors();
   } catch (error) {
     dispatch({ type: 'ADD_COMPETITOR_ERROR', payload: error.message });
   }
 };
 
-export const deleteData = (id) => async dispatch => {
+export const deleteComptetitor = (id) => async dispatch => {
   try {
-    await axios.delete(`/api/data/${id}`);
+    await axios.delete(`/api/kilpailijat/${id}`);
     dispatch({ type: 'DELETE_COMPETITOR_SUCCESS', payload: id });
   } catch (error) {
     dispatch({ type: 'DELETE_COMPETITOR_ERROR', payload: error.message });
